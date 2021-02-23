@@ -996,7 +996,7 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"repository": {
-				"url": "https://github.com/MartinKokesCz/docker-utils",
+				"url": "https://raw.githubusercontent.com/MartinKokesCz/docker-utils/main",
 				"stackfile": "templates/stacks/wordpress/docker-stack.yml"
 			},
 			"env": [{
@@ -1024,7 +1024,7 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"repository": {
-				"url": "https://github.com/MartinKokesCz/docker-utils",
+				"url": "https://raw.githubusercontent.com/MartinKokesCz/docker-utils/main",
 				"stackfile": "templates/stacks/wordpress/docker-compose.yml"
 			},
 			"env": [{
