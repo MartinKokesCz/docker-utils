@@ -4,7 +4,7 @@ services:
 
   wordpress:
     depends_on:
-      - db${SHORTNAME}
+      - db
     image: spoluprace/wordpress:latest
     restart: always
     expose:
@@ -13,7 +13,7 @@ services:
       VIRTUAL_HOST: ${VIRTUAL_HOST},www.${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${VIRTUAL_HOST},www.${VIRTUAL_HOST}
       LETSENCRYPT_EMAIL: spoluprace@martinkokes.cz
-      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_HOST: db:${DATABASE_PORT}
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: ${MYSQL_DATABASE_PASSWORD}
       WORDPRESS_DB_NAME: wordpress
@@ -22,7 +22,7 @@ services:
       - ./web:/var/www/html
       - ./php-conf.d/custom.ini:/usr/local/etc/php/conf.d/custom.ini
 
-  db${SHORTNAME}:
+  db:
     image: mysql:latest
     restart: always
     environment:
@@ -31,10 +31,12 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: thisnotuseduserhahaha
     volumes:
-      - db${SHORTNAME}:/var/lib/mysql
+      - db:/var/lib/mysql
+    ports:
+      - ${DATABASE_PORT}:3306
 
 volumes:
-    db${SHORTNAME}:
+    db:
     
 networks:
   default:
