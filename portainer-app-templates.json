@@ -996,8 +996,8 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"repository": {
-				"url": "https://github.com/MartinKokesCz/docker-utils/templates",
-				"stackfile": "stacks/wordpress/docker-stack.yml"
+				"url": "https://github.com/MartinKokesCz/docker-utils",
+				"stackfile": "templates/stacks/wordpress/docker-stack.yml"
 			},
 			"env": [{
 				"name": "MYSQL_DATABASE_PASSWORD",
@@ -1024,8 +1024,8 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"repository": {
-				"url": "https://github.com/MartinKokesCz/docker-utils/templates",
-				"stackfile": "stacks/wordpress/docker-compose.yml"
+				"url": "https://github.com/MartinKokesCz/docker-utils",
+				"stackfile": "templates/stacks/wordpress/docker-compose.yml"
 			},
 			"env": [{
 				"name": "MYSQL_DATABASE_PASSWORD",
