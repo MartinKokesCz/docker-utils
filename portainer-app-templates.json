@@ -987,7 +987,7 @@
 		},
         {
 			"type": 2,
-			"title": "Wordpress Custom",
+			"title": "Wordpress Custom Kopi",
 			"description": "Wordpress setup with a MySQL database",
 			"note": "Deploys a Wordpress instance connected to a MySQL database.",
 			"categories": [
@@ -1015,7 +1015,7 @@
 		},
 		{
 			"type": 3,
-			"title": "Wordpress Custom",
+			"title": "Wordpress Custom Kopi",
 			"description": "Wordpress setup with a MySQL database",
 			"note": "Deploys a Wordpress instance connected to a MySQL database.",
 			"categories": [
