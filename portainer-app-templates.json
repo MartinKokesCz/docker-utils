@@ -19,8 +19,8 @@
 				"label": "Database user password",
 				"description": "Password used by the MySQL user."
 			},{
-                "name": "HOSTNAME",
-				"label": "Network hostname",
+                "name": "CUSTOM_ALIAS",
+				"label": "Custom alias",
 				"description": "some unique identifier - for example mkcz for martinkokes.cz"
             }]
 		},
@@ -43,8 +43,8 @@
 				"label": "Database user password",
 				"description": "Password used by the MySQL user."
 			},{
-                "name": "HOSTNAME",
-				"label": "Network hostname",
+                "name": "CUSTOM_ALIAS",
+				"label": "Custom alias",
 				"description": "some unique identifier - for example mkcz for martinkokes.cz"
             }]
 		},{
