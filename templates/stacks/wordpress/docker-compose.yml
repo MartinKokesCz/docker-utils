@@ -5,15 +5,16 @@ services:
   wordpress:
     depends_on:
       - db
+    links:
+      - "db:${CUSTOM_ALIAS}db"
     image: wordpress:5.7-php8.0-apache
     restart: always
     expose:
       - 80
     environment:
-      WORDPRESS_DB_HOST: ${HOSTNAME}db:3306
+      WORDPRESS_DB_HOST: ${CUSTOM_ALIAS}db:3306
       WORDPRESS_DB_USER: user
       WORDPRESS_DB_PASSWORD: ${MYSQL_DATABASE_PASSWORD}
-      #${MYSQL_DATABASE_PASSWORD}
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DEBUG: 0
     volumes:
@@ -23,9 +24,8 @@ services:
   db:
     image: mysql:latest
     restart: always
-    hostname: ${HOSTNAME}db
     environment:
-      MYSQL_DATABASE: ${HOSTNAME}db
+      MYSQL_DATABASE: ${CUSTOM_ALIAS}db
       MYSQL_USER: user
       MYSQL_PASSWORD: ${MYSQL_DATABASE_PASSWORD}
       command: --innodb_use_native_aio=0
