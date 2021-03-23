@@ -6,16 +6,16 @@ services:
     depends_on:
       - db
     links:
-      - "db:${CUSTOM_ALIAS}db"
-    image: wordpress:5.7-php8.0-apache
+      - db:${CUSTOM_ALIAS}srv
+    image: wordpress:5.6.2-php8.0-apache
     restart: always
     expose:
       - 80
     environment:
-      WORDPRESS_DB_HOST: ${CUSTOM_ALIAS}db:3306
+      WORDPRESS_DB_HOST: ${CUSTOM_ALIAS}srv:3306
       WORDPRESS_DB_USER: user
       WORDPRESS_DB_PASSWORD: ${MYSQL_DATABASE_PASSWORD}
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_NAME: ${CUSTOM_ALIAS}db
       WORDPRESS_DEBUG: 0
     volumes:
       - ./web:/var/www/html
