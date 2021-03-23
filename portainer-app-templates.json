@@ -1,6 +1,53 @@
 {
 	"version": "2",
 	"templates": [{
+			"type": 2,
+			"title": "Wordpress Custom KOPI",
+			"description": "Wordpress setup with a MySQL database",
+			"note": "Deploys a Wordpress instance connected to a MySQL database.",
+			"categories": [
+				"CMS"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+			"repository": {
+				"url": "https://github.com/MartinKokesCz/docker-utils",
+				"stackfile": "templates/stacks/wordpress/docker-stack.yml"
+			},
+			"env": [{
+				"name": "MYSQL_DATABASE_PASSWORD",
+				"label": "Database user password",
+				"description": "Password used by the MySQL user."
+			},{
+                "name": "HOSTNAME",
+				"label": "Network hostname",
+				"description": "some unique identifier - for example mkcz for martinkokes.cz"
+            }]
+		},
+		{
+			"type": 3,
+			"title": "Wordpress Custom KOPI",
+			"description": "Wordpress setup with a MySQL database",
+			"note": "Deploys a Wordpress instance connected to a MySQL database.",
+			"categories": [
+				"CMS"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+			"repository": {
+				"url": "https://github.com/MartinKokesCz/docker-utils",
+				"stackfile": "templates/stacks/wordpress/docker-compose.yml"
+			},
+			"env": [{
+				"name": "MYSQL_DATABASE_PASSWORD",
+				"label": "Database user password",
+				"description": "Password used by the MySQL user."
+			},{
+                "name": "HOSTNAME",
+				"label": "Network hostname",
+				"description": "some unique identifier - for example mkcz for martinkokes.cz"
+            }]
+		},{
 			"type": 1,
 			"title": "Registry",
 			"description": "Docker image registry",
@@ -980,62 +1027,6 @@
 				"label": "Database root password",
 				"description": "Password used by the MySQL root user."
 			},{
-                "name": "VIRTUAL_HOST",
-				"label": "Domain name",
-				"description": "for example martinkokes.cz or pilarjan.cz"
-            }]
-		},
-        {
-			"type": 2,
-			"title": "Wordpress Custom KOPI",
-			"description": "Wordpress setup with a MySQL database",
-			"note": "Deploys a Wordpress instance connected to a MySQL database.",
-			"categories": [
-				"CMS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
-			"repository": {
-				"url": "https://github.com/MartinKokesCz/docker-utils",
-				"stackfile": "templates/stacks/wordpress/docker-stack.yml"
-			},
-			"env": [{
-				"name": "MYSQL_DATABASE_PASSWORD",
-				"label": "Database root password",
-				"description": "Password used by the MySQL root user."
-			},{
-				"name": "DATABASE_PORT",
-				"label": "Free database port",
-				"description": "because you are on one network you can't use 3306, mate"
-            },{
-                "name": "VIRTUAL_HOST",
-				"label": "Domain name",
-				"description": "for example martinkokes.cz or pilarjan.cz"
-            }]
-		},
-		{
-			"type": 3,
-			"title": "Wordpress Custom KOPI",
-			"description": "Wordpress setup with a MySQL database",
-			"note": "Deploys a Wordpress instance connected to a MySQL database.",
-			"categories": [
-				"CMS"
-			],
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
-			"repository": {
-				"url": "https://github.com/MartinKokesCz/docker-utils",
-				"stackfile": "templates/stacks/wordpress/docker-compose.yml"
-			},
-			"env": [{
-				"name": "MYSQL_DATABASE_PASSWORD",
-				"label": "Database root password",
-				"description": "Password used by the MySQL root user."
-			},{
-				"name": "DATABASE_PORT",
-				"label": "Free database port",
-				"description": "because you are on one network you can't use 3306, mate"
-            },{
                 "name": "VIRTUAL_HOST",
 				"label": "Domain name",
 				"description": "for example martinkokes.cz or pilarjan.cz"
